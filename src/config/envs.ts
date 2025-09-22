@@ -1,5 +1,4 @@
 import 'dotenv/config';
-
 import * as joi from 'joi';
 
 interface EnvVars {
@@ -13,7 +12,7 @@ const envsSchema = joi.object({
   PORT: joi.number().required(),
   DATABASE_URL: joi.string().required(),
 
-  NATS_SERVERS: joi.array().items(joi.string().uri()).required()
+  NATS_SERVERS: joi.array().items( joi.string() ).required(),
 })
 .unknown(true);
 
